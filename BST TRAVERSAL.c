@@ -60,11 +60,38 @@ void preorder(NODE*root)
     }
 }
 
+void inorder(NODE*root)
+{
+    NODE*temp=root;
+    if(temp!=NULL)
+    {
+        inorder(temp->left);
+        printf("%d\t",temp->data);
+        inorder(temp->right);
+    }
+}
+void postorder(NODE*root)
+{
+    NODE*temp=root;
+    if(temp!=NULL)
+    {
+        postorder(temp->left);
+        postorder(temp->right);
+        printf("%d\t",temp->data);
+
+    }
+}
 void main()
 {
   NODE*root=NULL;
   root=createbst(root);
   printf("Preorder Traversal");
   preorder(root);
+
+   printf("\n\nInorder Traversal");
+  inorder(root);
+
+  printf("\n\nPostorder Traversal");
+  postorder(root);
 }
 
