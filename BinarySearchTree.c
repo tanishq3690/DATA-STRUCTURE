@@ -43,9 +43,7 @@ NODE *createbst(NODE * root)
             parent->left = newnode;
         else
             parent->right=newnode;
-
-
-    }
+    }return(root);
 }
 
 int main()
