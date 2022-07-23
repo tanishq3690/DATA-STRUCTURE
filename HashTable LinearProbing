@@ -1,0 +1,74 @@
+#include<stdio.h>
+
+int hf(int key,int i)
+{
+    return (key%10 +i)%10;
+}
+
+void insert(int HT[],int key)
+{
+    int i, index;
+    for(i=0;i<10;i++)
+    {
+        index=hf(key,i);
+        if(HT[index]==-1)
+        {
+            HT[index]=key;
+            return ;
+        }
+
+    }printf("\nCould not insert key %d",key);
+}
+
+void showTable(int HT[10])
+{int i;
+    for( i=0;i<10;i++){
+    printf("\n%d[%d]\n",i,HT[i]);
+}
+}
+
+
+
+int main()
+{
+
+    int HT[10],i,key,choice;
+    for(i=0;i<10;i++)
+    HT[i]=-1;
+
+    do
+    {
+        printf("1.Insert\n2.Delete\n3.Display Hash Table\n4.Search \n5.Exit");
+        printf("\n\nEnter your choice :");
+        scanf("%d",&choice);
+
+    switch (choice)
+        {
+        case 1:
+        printf("\nEnter key to be inserted in the Hash Table  :");
+        scanf("%d",&key);
+        insert(HT,key);
+        showTable(HT);
+        break;
+        case 2:
+            printf("\nUnder construction\n");
+            break;
+        case 3:
+            printf("\nUnder construction");
+            break;
+        case 4:
+            printf("\nUnder construction");
+            break;
+        }
+    }while(choice!=5);
+
+    return 0;
+}
+
+
+
+
+
+
+
+
