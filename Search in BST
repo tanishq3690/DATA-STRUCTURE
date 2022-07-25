@@ -1,0 +1,23 @@
+struct node *search(struct node *root,int key)
+{
+struct  node *temp=root;
+    while(temp!=NULL)
+    {
+        if(key==temp->data)
+            return temp;
+        if(key<temp->data)
+            temp=temp->left;
+        else
+            temp=temp->right;
+
+    }return NULL;
+}
+
+//Function call in the main function.
+
+
+ int result= search(p,1);
+   if(result==NULL)
+    printf("\nElement not found");
+   else
+    printf("\n  Element found");
